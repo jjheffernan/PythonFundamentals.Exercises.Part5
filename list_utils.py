@@ -1,3 +1,4 @@
+import math
 from typing import List
 from math import ceil
 
@@ -63,7 +64,18 @@ def half_list(list_in: List, half: int) -> List:
     If the length of list_in is an odd number, round the half value up (hint: math.ceil()).
     :return: A list.
     """
-    pass  # remove pass statement and implement me
+    list_out = []
+    if len(list_in) % 2 == 0:
+        n = int(len(list_in)/2)
+        for i in range(n):
+            list_out = list.insert(list_in[i],i)
+    else:
+        n = math.ceil(len(list_in))
+        for i in range(n):
+            list_out = list.append(list_in[i])
+
+    return list_out
+    # pass  # remove pass statement and implement me
 
 
 def remove_odds(list_in: List[int]) -> None:
@@ -72,7 +84,12 @@ def remove_odds(list_in: List[int]) -> None:
 
     :return: None
     """
-    pass  # remove pass statement and implement me
+    i = 0
+    while i < len(list_in):
+        if list_in[i] % 2 != 0:
+            list_in.pop(i)
+        i += 1
+    # pass  # remove pass statement and implement me
 
 
 def remove_evens(list_in: List[int]) -> None:
@@ -81,7 +98,13 @@ def remove_evens(list_in: List[int]) -> None:
 
     :return: None
     """
-    pass  # remove pass statement and implement me
+    i = 0
+    while i < len(list_in):
+        if list_in[i] % 2 == 0:
+            list_in.pop(i)
+        i += 1
+    #return list_in
+    # pass  # remove pass statement and implement me
 
 
 def concatenate_lists(list_a: List, list_b: List) -> List:
@@ -92,7 +115,8 @@ def concatenate_lists(list_a: List, list_b: List) -> List:
     :param list_b: Another list
     :return: A list containing all elements from list_a and list_b
     """
-    pass  # remove pass statement and implement me
+    return list_a + list_b
+    # pass  # remove pass statement and implement me
 
 
 def multiply_list(list_in: List, scalar: int) -> List:
@@ -104,4 +128,5 @@ def multiply_list(list_in: List, scalar: int) -> List:
     :param scalar: An integer
     :return: A list
     """
-    pass  # remove pass statement and implement me
+    return list_in[:]*scalar
+    # pass  # remove pass statement and implement me
