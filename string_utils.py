@@ -40,7 +40,7 @@ def substring(str_in: str, start: int, stop: int) -> str:
     start -- starting position of the input parameter to start the substring (inclusive)
     stop -- stopping position of the input parameter to stop the substring (exclusive)
     """
-
+    return str_in[start:stop]
     # pass  # remove pass statement and implement me
 
 
@@ -50,4 +50,6 @@ def opposite_case(str_in: str) -> str:
     Example: 
     When input = "Python" the function returns "pYTHON"
     """
-    pass  # remove pass statement and implement me
+
+    return str_in.swapcase()
+    # pass  # remove pass statement and implement me
