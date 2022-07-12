@@ -64,15 +64,24 @@ def half_list(list_in: List, half: int) -> List:
     If the length of list_in is an odd number, round the half value up (hint: math.ceil()).
     :return: A list.
     """
-    list_out = []
-    if len(list_in) % 2 == 0:
-        n = int(len(list_in)/2)
-        for i in range(n):
-            list_out = list.insert(list_in[i],i)
+
+    if half == 1:
+        n = int(len(list_in) / 2)
+        list_out = list_in[:-n]
+    elif half == 2:
+        n = math.ceil(len(list_in)/2)
+        list_out = list_in[-n:]
     else:
-        n = math.ceil(len(list_in))
-        for i in range(n):
-            list_out = list.append(list_in[i])
+        pass
+
+    # if len(list_in) % 2 == 0:
+    #     n = int(len(list_in)/2)
+    #     for i in range(n):
+    #         list_out = list.insert(list_in[i],i)
+    # else:
+    #     n = math.ceil(len(list_in))
+    #     for i in range(n):
+    #         list_out = list.append(list_in[i])
 
     return list_out
     # pass  # remove pass statement and implement me
